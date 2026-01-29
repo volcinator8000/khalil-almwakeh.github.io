@@ -1,0 +1,92 @@
+/* General Reset & Arch-like Dark Theme */
+body {
+    background-color: #1e1e2e; /* Base dark */
+    color: #cdd6f4;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Boot Screen Animation */
+#boot-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #000;
+    z-index: 9999;
+}
+
+/* Desktop Icons */
+.icon-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.icon {
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+.icon:hover { transform: scale(1.1); }
+.icon-img {
+    width: 48px;
+    height: 48px;
+    background-color: #89b4fa; /* Blue accent */
+    margin: 0 auto 5px;
+    border-radius: 5px;
+}
+.folder-icon { background-color: #f9e2af; } /* Yellow for folders */
+.terminal-icon { background-color: #313244; border: 2px solid #a6e3a1; }
+
+/* Windows */
+.window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0); /* Start hidden/scaled down */
+    width: 600px;
+    background: #181825;
+    border: 1px solid #45475a;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: none;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.27), opacity 0.2s;
+    opacity: 0;
+}
+
+.window.open {
+    display: block;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.title-bar {
+    background: #11111b;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #45475a;
+    border-radius: 8px 8px 0 0;
+    user-select: none;
+}
+
+.content { padding: 20px; }
+
+/* Explorer Specifics */
+.file-entry {
+    padding: 10px;
+    border-bottom: 1px solid #313244;
+    cursor: pointer;
+}
+.file-entry:hover { background: #313244; }
+.file-name { color: #89b4fa; font-weight: bold; margin-right: 15px; }
+
+/* Utilities */
+.green { color: #a6e3a1; }
+.blue { color: #89b4fa; }
+.blink { animation: blink 1s infinite; }
+@keyframes blink { 50% { opacity: 0; } }

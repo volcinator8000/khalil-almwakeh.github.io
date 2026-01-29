@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User@Epitech ~ Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Boot Screen -->
+    <div id="boot-screen">
+        <div class="terminal-text">
+            <p>> KERNEL: Arch Linux x86_64</p>
+            <p>> LOADING: User Interface...</p>
+            <p>> STATUS: Ready.</p>
+            <p class="blink">_</p>
+        </div>
+    </div>
+
+    <!-- Main Desktop Area -->
+    <div id="desktop" style="display: none;">
+        
+        <!-- Desktop Icons -->
+        <div class="icon-container">
+            <div class="icon" onclick="openWindow('about-window')">
+                <div class="icon-img terminal-icon"></div>
+                <span>readme.txt</span>
+            </div>
+            <div class="icon" onclick="openWindow('projects-window')">
+                <div class="icon-img folder-icon"></div>
+                <span>projects/</span>
+            </div>
+            <div class="icon" onclick="openWindow('contact-window')">
+                <div class="icon-img mail-icon"></div>
+                <span>contact</span>
+            </div>
+        </div>
+
+        <!-- Window: About (Terminal Style) -->
+        <div id="about-window" class="window draggable">
+            <div class="title-bar">
+                <span>vim readme.txt</span>
+                <button class="close-btn" onclick="closeWindow('about-window')">x</button>
+            </div>
+            <div class="content terminal-content">
+                <p><span class="green">user@epitech</span>: <span class="blue">~</span>$ cat readme.txt</p>
+                <p>Role: Epitech Student (1st Year)</p>
+                <p>Focus: C Programming, Unix Systems, DevOps</p>
+                <p>Status: Working on my_radar & organised</p>
+                <br>
+                <p>I build efficient C code and manage Linux infrastructure.</p>
+                <p class="blink">_</p>
+            </div>
+        </div>
+
+        <!-- Window: Projects (File Explorer Style) -->
+        <div id="projects-window" class="window draggable">
+            <div class="title-bar">
+                <span>~/projects</span>
+                <button class="close-btn" onclick="closeWindow('projects-window')">x</button>
+            </div>
+            <div class="content explorer-content">
+                <div class="file-entry">
+                    <span class="file-name">./my_radar</span>
+                    <span class="file-desc">Air traffic control simulation (CSFML)</span>
+                </div>
+                <div class="file-entry">
+                    <span class="file-name">./organised</span>
+                    <span class="file-desc">Workshop management system</span>
+                </div>
+                <div class="file-entry">
+                    <span class="file-name">./minishell</span>
+                    <span class="file-desc">Unix shell implementation</span>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
