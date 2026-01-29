@@ -1,1 +1,0 @@
-# khalil-almwakeh.github.io
